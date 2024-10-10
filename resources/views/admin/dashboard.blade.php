@@ -9,7 +9,8 @@
 
 
     @php
-        $total_blogs = App\Models\Blog::all()->count();
+        // $total_blogs = App\Models\Blog::all()->count();
+        $total_blogs = 0;
     @endphp
     
     <!-- Sale & Revenue Start -->
