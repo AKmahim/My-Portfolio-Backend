@@ -1,7 +1,7 @@
 @extends('layouts.admin-master')
 
 @section('meta-title')
-    <title>XRI - Admin | Blog Category</title>
+    <title>MM - Admin | Project Category</title>
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
 
             <div class="col-sm-12 col-xl-8 bg-secondary text-center rounded p-4 mb-4">
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h6 class="mb-0">Blog Category List</h6>
+                    <h6 class="mb-0">Project Category List</h6>
                 </div>
                 <div class="table-responsive">
                     <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -21,25 +21,18 @@
                             <tr class="text-white">
                                 
                                 <th scope="col">ID</th>
-                                <th scope="col">Blog Category Name</th>
-                                <th scope="col">Blog Category Img</th>
+                                <th scope="col">Project Category Name</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php($i = 1)
-                            @foreach ($categories as $item)
+                            @foreach ($project_category as $item)
                                 <tr>
-                                    <td>{{ $categories->firstItem()+$loop->index }}</td>
-                                    <td>{{ $item->category_name }}</td>
-                                    @if ($item->category_img)
-                                    <td class="text-center"> <a target="_blank" href="{{url($item->category_img)}}"><img style="width: 50px;height:50px" src="{{asset($item->category_img)}}" alt="" srcset=""></a> </td>
-                                        
-                                    @else
-                                        <td></td>
-                                    @endif
+                                    <td>{{ $i++ }}</td>
+                                    <td style="text-align: center">{{ $item->category_name }}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-primary" onclick="alert('are you sure?')" href="/admin/blog-category/delete/{{$item->id}}">Delete</a>
+                                        <a class="btn btn-sm btn-primary" onclick="alert('are you sure?')" href="/admin/project-category/delete/{{$item->id}}">Delete</a>
                                     </td>
                                     
                                 </tr>
@@ -61,19 +54,15 @@
                             </div>
                             
                         @endif
-                        <h6 class="mb-1 text-center">Add Blog Category</h6>
+                        <h6 class="mb-1 text-center">Add Project Category</h6>
 
-                        <form action="{{ url('/admin/blog-category/add') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ url('/admin/project-category/add') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-floating mb-3">
                                 <input type="text" name="category_name" required class="form-control" id="floatingInput"
                                     placeholder="insert new category">
                                 <label for="floatingInput">Category Name</label>
-                            </div>
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">category image - 270x270 (optional)</label>
-                                <input name="category_img" class="form-control bg-dark" type="file" id="formFile" >
                             </div>
                             <button type="submit" class="btn btn-primary">Add</button>
                         </form>

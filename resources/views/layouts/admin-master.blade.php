@@ -76,7 +76,7 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href=" {{route('dashboard')}} " class="nav-item nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}"><i class="ri-dashboard-horizontal-fill me-2"></i>Dashboard</a>
-                    <a href="{{ url('/admin/blog-category')}}" class="nav-item nav-link {{ request()->routeIs('admin.blog-category') ? 'active' : '' }}"><i class="fa fa-table me-2"></i>Blog Category</a>
+                    <a href="{{ url('/admin/project-category')}}" class="nav-item nav-link {{ request()->routeIs('admin.project-category') ? 'active' : '' }}"><i class="fa fa-table me-2"></i>Project Category</a>
                    
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('admin.blogs.create') ? 'active' : '' }} {{ request()->routeIs('admin.blogs.index') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="ri-blogger-fill me-2"></i>Blogs</a>
@@ -87,14 +87,14 @@
                     </div>
 
                     {{-- ============================================ blog author management ===================== --}}
-                    <div class="nav-item dropdown">
+                    {{-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('admin.author.index') ? 'active' : '' }} {{ request()->routeIs('admin.author.create') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="ri-user-3-fill me-2"></i>Author</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{url('/admin/authors')}}" class="dropdown-item {{ request()->routeIs('admin.author.index') ? 'active' : '' }}" >All Author</a>
                             <a href="{{url('/admin/author/create')}}" class="dropdown-item {{ request()->routeIs('admin.author.create') ? 'active' : '' }}">Create Author Acc.</a>
                         </div>
                     </div>
-                    
+                     --}}
                     {{-- <a href="widget " class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="form " class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table " class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
