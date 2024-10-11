@@ -1,7 +1,7 @@
 @extends('layouts.admin-master')
 
 @section('meta-title')
-    <title>XRI - Admin | Create Blog </title>
+    <title>MM - Admin | Create Project </title>
 @endsection
 
 
@@ -16,14 +16,14 @@
                 </div>
                 
             @endif
-            <h2 class="mb-1 text-center">Create Blog</h2>
+            <h2 class="mb-1 text-center">Create Project</h2>
             <br>
 
-            <form action="{{ url('/admin/blogs/store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('/admin/projects/store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
             
                 <div class="form-floating mb-3">
-                    <input type="text" name="title" value="{{ old('title') }}" required class="form-control" id="floatingInput" placeholder="Blog Title">
+                    <input type="text" name="project_title" value="{{ old('title') }}" required class="form-control" id="floatingInput" placeholder="Blog Title">
                     <label for="floatingInput">Blog Title</label>
                     @error('title')
                         <div class="text-danger">{{ $message }}</div>

@@ -6,7 +6,7 @@ use App\Http\Controllers\frontend\FrontendController;
 
 // ========================== admin route ====================
 use App\Http\Controllers\admin\ProjectCategoryController;
-// use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\ProjectController;
 // use App\Http\Controllers\admin\BlogAuthorController;
 
 
@@ -73,13 +73,13 @@ Route::middleware('auth')->group(function () {
     // Route::get('/admin/author/delete/{id}',[BlogAuthorController::class,'destroy']);
 
 
-    // // ======================= blog route list =========================
-    // Route::get('/admin/blogs',[BlogController::class,'index'])->name('admin.blog.index');
-    // Route::get('/admin/blogs/create',[BlogController::class,'create'])->name('admin.blog.create');
-    // Route::post('/admin/blogs/store',[BlogController::class,'store'])->name('admin.blog.store');
-    // Route::get('/admin/blogs/edit/{id}',[BlogController::class,'edit']);
-    // Route::post('/admin/blogs/update/{id}',[BlogController::class,'update']);
-    // Route::get('/admin/blogs/delete/{id}',[BlogController::class,'destroy']);
+    // ======================= blog route list =========================
+    Route::get('/admin/projects',[ProjectController::class,'index'])->name('admin.project.index');
+    Route::get('/admin/projects/create',[ProjectController::class,'create'])->name('admin.project.create');
+    Route::post('/admin/projects/store',[ProjectController::class,'store'])->name('admin.project.store');
+    Route::get('/admin/projects/edit/{id}',[ProjectController::class,'edit']);
+    Route::post('/admin/projects/update/{id}',[ProjectController::class,'update']);
+    Route::get('/admin/projects/delete/{id}',[ProjectController::class,'destroy']);
 
     
 

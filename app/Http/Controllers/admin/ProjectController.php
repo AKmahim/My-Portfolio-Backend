@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\ProjectCategory;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -21,6 +23,8 @@ class ProjectController extends Controller
     public function create()
     {
         //
+        $project_category = ProjectCategory::all();
+        return view('admin.projects.create',compact('project_category'));
     }
 
     /**

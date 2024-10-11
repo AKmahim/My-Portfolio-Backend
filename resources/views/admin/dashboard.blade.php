@@ -1,7 +1,7 @@
 @extends('layouts.admin-master')
 
 @section('meta-title')
-    <title>XRI - Admin Dashboard</title>
+    <title>MM - Admin Dashboard</title>
 @endsection
 
 @section('content')

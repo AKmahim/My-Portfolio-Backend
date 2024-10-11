@@ -79,10 +79,10 @@
                     <a href="{{ url('/admin/project-category')}}" class="nav-item nav-link {{ request()->routeIs('admin.project-category') ? 'active' : '' }}"><i class="fa fa-table me-2"></i>Project Category</a>
                    
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('admin.blogs.create') ? 'active' : '' }} {{ request()->routeIs('admin.blogs.index') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="ri-blogger-fill me-2"></i>Blogs</a>
+                        <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('admin.project.create') ? 'active' : '' }} {{ request()->routeIs('admin.project.index') ? 'active' : '' }}" data-bs-toggle="dropdown"><i class="ri-blogger-fill me-2"></i>Projects</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{{url('/admin/blogs')}}" class="dropdown-item {{ request()->routeIs('admin.blog.index') ? 'active' : '' }}" >All Blogs</a>
-                            <a href="{{url('/admin/blogs/create')}}" class="dropdown-item {{ request()->routeIs('admin.blog.create') ? 'active' : '' }}">Create Blog</a>
+                            <a href="{{url('/admin/projects')}}" class="dropdown-item {{ request()->routeIs('admin.project.index') ? 'active' : '' }}" >All Projects</a>
+                            <a href="{{url('/admin/projects/create')}}" class="dropdown-item {{ request()->routeIs('admin.project.create') ? 'active' : '' }}">Create Project</a>
                         </div>
                     </div>
 
