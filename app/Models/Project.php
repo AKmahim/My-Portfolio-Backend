@@ -16,6 +16,7 @@ class Project extends Model
         'demo_link',
         'video_link',
         'code_link',
-        'project_category'
+        'project_category',
+        'project_serial',
     ];
 }

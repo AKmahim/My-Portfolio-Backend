@@ -69,6 +69,13 @@
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="project_serial" value="{{ old('project_serial') }}"  class="form-control" id="floatingInput" placeholder="project_serial">
+                    <label for="floatingInput">Project Serial</label>
+                    @error('project_serial')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                
                 <div class="my-3 d-flex flex-wrap gap-4" style="color: white;">
                     @foreach ($project_category as $item)

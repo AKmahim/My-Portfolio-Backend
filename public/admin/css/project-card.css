@@ -76,10 +76,11 @@
 .project-footer {
     background-color: #373b56;
     border-top: 2px solid yellow;
-    padding: 1rem;
+    padding: 0.5rem;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 0.25rem;
 }

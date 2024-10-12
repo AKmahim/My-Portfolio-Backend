@@ -74,6 +74,7 @@ class ProjectController extends Controller
             'video_link' => $request->video_link,
             'code_link' => $request->code_link,
             'project_category' => $json_project_category,
+            'project_serial' => $request->project_serial,
         ]);
 
         if ($data) {
@@ -90,6 +91,8 @@ class ProjectController extends Controller
     public function show(string $id)
     {
         //
+        
+        
     }
 
     /**
@@ -98,6 +101,14 @@ class ProjectController extends Controller
     public function edit(string $id)
     {
         //
+        $project = Project::find($id);
+        if($project){
+            $project_category = ProjectCategory::all();
+            return view('admin.projects.edit',compact('project_category','project'));
+        }
+        else{
+            return Redirect()->back()->with('success','Something went wrong!');
+        }
     }
 
     /**
@@ -106,6 +117,62 @@ class ProjectController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $project = Project::find($id);
+        if($project){
+            ini_set('memory_limit', '512M');
+        
+            $validated = $request->validate([
+                'project_title' => 'required|string',
+                'short_description' => 'required|string',
+                'project_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:3072',
+                'demo_link' => 'nullable|string',
+                'video_link' => 'nullable|string',
+                'code_link' => 'nullable|string',
+                'project_category' => 'required',
+                ]
+            );
+
+            // ============== project picture upload =======
+            $project_picture = $project->project_picture;
+            $temp_img = $request->file('project_picture');
+            if($temp_img){
+                if(file_exists($project_picture)){
+                    unlink($project_picture);
+                }
+                $name_gen = hexdec(uniqid());
+                $img_ext = strtolower($temp_img->getClientOriginalExtension());
+                $img_name = $name_gen . '.' . $img_ext;
+                $up_location = 'project/';
+                $project_picture = $up_location.$img_name;
+                $temp_img->move($up_location,$img_name);
+            }
+
+            // ================ json encoded project category =======
+            $json_project_category = json_encode($request->project_category);
+
+
+            // create project 
+            $data = $project->update([
+                'project_title' => $request->project_title,
+                'short_description' => $request->short_description,
+                'project_picture' => $project_picture,
+                'demo_link' => $request->demo_link,
+                'video_link' => $request->video_link,
+                'code_link' => $request->code_link,
+                'project_category' => $json_project_category,
+                'project_serial' => $request->project_serial,
+            ]);
+
+            if ($data) {
+                return Redirect()->back()->with('success','Project Updated Successfully');
+            }
+            else{
+                return Redirect()->back()->with('success','Fail to update project info!!');
+            }
+        }
+        else{
+            return Redirect()->back()->with('success','Something went wrong!!');
+        }
     }
 
     /**

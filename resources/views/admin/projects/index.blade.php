@@ -75,10 +75,15 @@
                                     @endif
                                     
                                 </div>
+                                @php
+                                    $project_category = json_decode($project->project_category);
+                                    
+                                @endphp
                                 <!-- footer -->
                                 <div class="project-footer">
-                                    <a href="#" class="project-tag"># CSS</a>
-                                    <a href="#" class="project-tag"># JavaScript</a>
+                                    @foreach ($project_category as $item)
+                                        <a href="#" class="project-tag"># {{$item}}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

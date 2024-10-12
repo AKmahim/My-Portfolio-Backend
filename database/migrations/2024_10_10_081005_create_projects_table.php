@@ -27,6 +27,7 @@ return new class extends Migration
             $table->text('video_link')->nullable();
             $table->text('code_link')->nullable();
             $table->longText('project_category')->nullable();
+            $table->string('project_serial')->nullable();
             $table->timestamps();
         });
     }
