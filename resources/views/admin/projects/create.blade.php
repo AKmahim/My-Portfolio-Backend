@@ -23,22 +23,17 @@
                 @csrf
             
                 <div class="form-floating mb-3">
-                    <input type="text" name="project_title" value="{{ old('title') }}" required class="form-control" id="floatingInput" placeholder="Blog Title">
+                    <input type="text" name="project_title" value="{{ old('project_title') }}" required class="form-control" id="floatingInput" placeholder="Blog Title">
                     <label for="floatingInput">Blog Title</label>
-                    @error('title')
+                    @error('project_title')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
             
-                <div>
-                    <h4>Select Author:</h4>
-                    <select name="author_id" required class="form-select mb-3" aria-label="Default select example">
-                        <option selected disabled>Open this select menu and select an author</option>
-                        @foreach ($authors as $author)
-                            <option value="{{ $author->id }}" {{ old('author_id') == $author->id ? 'selected' : '' }}>{{ $author->name }}</option>
-                        @endforeach
-                    </select>
-                    @error('author_id')
+                <div class="mb-3">
+                    <label for="formFile" class="form-label text-center">Project Picture</label>
+                    <input name="project_picture" class="form-control bg-dark" type="file" id="formFile" required>
+                    @error('project_picture')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
@@ -52,49 +47,46 @@
                 </div>
             
                 <div class="form-floating mb-3">
-                    <input type="text" name="keyword" value="{{ old('keyword') }}" class="form-control" id="floatingInput" placeholder="SEO Keyword">
-                    <label for="floatingInput">SEO Keyword</label>
-                    @error('keyword')
+                    <input type="text" name="demo_link" value="{{ old('demo_link') }}"  class="form-control" id="floatingInput" placeholder="Demo Link">
+                    <label for="floatingInput">Demo Link</label>
+                    @error('demo_link')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-            
-                <div>
-                    <h4>Select Blog Category:</h4>
-                    <select name="blog_category" required class="form-select mb-3" aria-label="Default select example">
-                        <option selected disabled>Open this select menu and select a blog category</option>
-                        @foreach ($blog_category as $category)
-                            <option value="{{ $category->category_name }}" {{ old('blog_category') == $category->category_name ? 'selected' : '' }}>{{ $category->category_name }}</option>
-                        @endforeach
-                    </select>
-                    @error('blog_category')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-            
-                <div class="mb-3">
-                    <label for="formFile" class="form-label text-center">Blog Thumbnail - size(850x566)</label>
-                    <input name="blog_thumbnail" class="form-control bg-dark" type="file" id="formFile" required>
-                    @error('blog_thumbnail')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-            
-                <div class="mb-3">
-                    <label for="formFile" class="form-label text-center">Blog Small Thumbnail - size(120x120)</label>
-                    <input name="blog_short_thumbnail" class="form-control bg-dark" type="file" id="formFile" required>
-                    @error('blog_short_thumbnail')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-            
+
                 <div class="form-floating mb-3">
-                    <h2>Blog Content</h2>
-                    <textarea class="form-control" required name="content" id="summernote" style="background: #121214">{{ old('content') }}</textarea>
-                    @error('content')
+                    <input type="text" name="video_link" value="{{ old('video_link') }}"  class="form-control" id="floatingInput" placeholder="Video Link">
+                    <label for="floatingInput">Video Link</label>
+                    @error('video_link')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" name="code_link" value="{{ old('code_link') }}"  class="form-control" id="floatingInput" placeholder="Code Link">
+                    <label for="floatingInput">Code Link</label>
+                    @error('code_link')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+               
+                <div class="my-3 d-flex flex-wrap gap-4" style="color: white;">
+                    @foreach ($project_category as $item)
+                        <div class="form-check">
+                            <input name="project_category[]" class="form-check-input" type="checkbox" value="{{$item->category_name}}" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{$item->category_name}}
+                            </label>
+                        </div>
+                    @endforeach
+                    @error('project_category')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    
+                    
+                </div>
+
+
             
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
