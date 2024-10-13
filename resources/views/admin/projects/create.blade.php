@@ -24,14 +24,14 @@
             
                 <div class="form-floating mb-3">
                     <input type="text" name="project_title" value="{{ old('project_title') }}" required class="form-control" id="floatingInput" placeholder="Project Title">
-                    <label for="floatingInput">Project Title (within - 3MB )</label>
+                    <label for="floatingInput">Project Title</label>
                     @error('project_title')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
             
                 <div class="mb-3">
-                    <label for="formFile" class="form-label text-center">Project Picture</label>
+                    <label for="formFile" class="form-label text-center">Project Picture  (within - 3MB )</label>
                     <input name="project_picture" class="form-control bg-dark" type="file" id="formFile" required>
                     @error('project_picture')
                         <div class="text-danger">{{ $message }}</div>
@@ -39,7 +39,7 @@
                 </div>
             
                 <div class="form-floating mb-3">
-                    <textarea name="short_description" required class="form-control" rows="3">{{ old('short_description') }}</textarea>
+                    <textarea name="short_description" required class="form-control" style="height:300px;">{{ old('short_description') }}</textarea>
                     <label for="floatingInput">Short Description</label>
                     @error('short_description')
                         <div class="text-danger">{{ $message }}</div>
