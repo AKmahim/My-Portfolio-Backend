@@ -23,8 +23,8 @@
                 @csrf
             
                 <div class="form-floating mb-3">
-                    <input type="text" name="project_title" value="{{ old('project_title') }}" required class="form-control" id="floatingInput" placeholder="Blog Title">
-                    <label for="floatingInput">Blog Title</label>
+                    <input type="text" name="project_title" value="{{ old('project_title') }}" required class="form-control" id="floatingInput" placeholder="Project Title">
+                    <label for="floatingInput">Project Title (within - 3MB )</label>
                     @error('project_title')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
