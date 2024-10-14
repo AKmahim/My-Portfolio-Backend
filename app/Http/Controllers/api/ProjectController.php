@@ -55,7 +55,7 @@ class ProjectController extends Controller
                 'status'=> false,
                 'message' => "No Project Found!!",
                 'data' => $projects,
-            ],404);
+            ],200);
         }
 
     }
