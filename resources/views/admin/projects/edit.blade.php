@@ -16,14 +16,14 @@
                 </div>
                 
             @endif
-            <h2 class="mb-1 text-center">Edit Blog</h2>
+            <h2 class="mb-1 text-center">Edit Project</h2>
             <div class="col-xl-12">
                 <form action="{{ url('/admin/projects/update/'.$project->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
     
                     <div class="form-floating mb-3">
-                        <input type="text" name="project_title" value="{{ $project->project_title }}" required class="form-control" id="floatingInput" placeholder="Blog Title">
-                        <label for="floatingInput">Blog Title</label>
+                        <input type="text" name="project_title" value="{{ $project->project_title }}" required class="form-control" id="floatingInput" placeholder="Project Title">
+                        <label for="floatingInput">Project Title</label>
                         @error('project_title')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
