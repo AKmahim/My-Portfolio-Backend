@@ -1,7 +1,7 @@
 .project-container {
     display: grid;
-    gap: 1rem;
-    margin: 1rem;
+    /* gap: 1rem; */
+    /* margin: 1rem; */
 }
 
 .project-card {
@@ -36,13 +36,14 @@
 }
 
 .project-title {
-    font-size: 2rem;
+    font-size: 1.4rem;
+    padding:10px;
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
 .project-description {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 500;
     margin-bottom: 1rem;
 }
@@ -76,17 +77,17 @@
 .project-footer {
     background-color: #373b56;
     border-top: 2px solid yellow;
-    padding: 0.5rem;
+    padding: 0.2rem;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.25rem;
+    gap: 0.2rem;
 }
 
 .project-tag {
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 0.5rem;
     background-color: transparent;
     color: #0DE8F4;
     font-weight: 500;

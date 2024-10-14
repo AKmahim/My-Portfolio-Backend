@@ -9,8 +9,8 @@
 
 
     @php
-        // $total_blogs = App\Models\Blog::all()->count();
-        $total_blogs = 0;
+        $total_blogs = App\Models\Project::all()->count();
+        // $total_blogs = 0;
     @endphp
     
     <!-- Sale & Revenue Start -->
@@ -20,7 +20,7 @@
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa fa-chart-line fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Total Blogs</p>
+                        <p class="mb-2">Total Project</p>
                         <h6 class="mb-0">{{$total_blogs}}</h6>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa fa-chart-bar fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Total Blogs</p>
+                        <p class="mb-2">Total Project</p>
                         <h6 class="mb-0">{{$total_blogs}}</h6>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa fa-chart-area fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Total Blogs</p>
+                        <p class="mb-2">Total Project</p>
                         <h6 class="mb-0">{{$total_blogs}}</h6>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa fa-chart-pie fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Total Blogs</p>
+                        <p class="mb-2">Total Project</p>
                         <h6 class="mb-0">{{$total_blogs}}</h6>
                     </div>
                 </div>
