@@ -28,7 +28,7 @@ class ProjectController extends Controller
 
     // get all project 
     public function getAllProject(){
-        $project = Project::latest()->orderBy('project_serial', 'asc')->get();
+        $project = Project::orderBy('project_serial', 'asc')->get();
         return $this->ApiResponse($project,"All Project Data Fetch ");
     }
 
